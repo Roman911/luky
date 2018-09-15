@@ -5,17 +5,18 @@ export const navBarItems = [
   },
   {
     title: 'спідвей',
-    route: '/speedway',
-    class: 'fas fa-th'
+    route: '/speedway'
+  },
+  {
+    title: 'подорожі',
+    route: '/travel'
   },
   {
     title: 'про мене',
-    route: '/about',
-    class: 'fas fa-user-secret'
+    route: '/about'
   },
   {
     title: 'контакти',
-    route: '/contacts',
-    class: 'fas fa-address-book'
+    route: '/contacts'
   }
 ];

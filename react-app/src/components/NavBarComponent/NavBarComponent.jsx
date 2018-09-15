@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navBarItems } from './navBarConfig';
 
@@ -7,6 +7,7 @@ import baseStyle from './../../style/baseStyle'
 import styles from './NavBarStyle'
 
 export default class NavBarComponent extends Component {
+
   render() {
 
     const links = navBarItems.map((item, index) => {
@@ -25,7 +26,7 @@ export default class NavBarComponent extends Component {
       <div className={css(styles.img)}>
         <img src="./img/logo.jpg" alt=""/>
       </div>
-      <div className={css(baseStyle.wrapper, styles.navBarWrapper)}>
+      <div className={css(baseStyle.wrapperM, styles.navBarWrapper)}>
         {links}
       </div>
     </div>

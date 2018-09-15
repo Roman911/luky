@@ -6,8 +6,7 @@ export default StyleSheet.create({
   navBar: {
     top: 0,
     backgroundColor: '#fff',
-    width: '100%',
-    boxShadow: '0 0 5px 1px grey'
+    width: '100%'
   },
   navBarWrapper: {
     display: 'flex',
