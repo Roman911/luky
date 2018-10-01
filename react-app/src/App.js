@@ -3,7 +3,7 @@ import { Redirect } from 'react-router';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import NavBarComponent from "./components/NavBarComponent/NavBarComponent";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-import HomeComponent from "./components/HomeComponent/HomeComponent";
+import Home  from "./containers/Home";
 import AboutSidebarComponent from "./components/AboutSidebarComponent/AboutSidebarComponent";
 
 import { css } from 'aphrodite/no-important';
@@ -17,7 +17,7 @@ export default class App extends Component {
         <NavBarComponent height='300' />
         <div className={css(baseStyle.wrapper, AppStyle.wrapper)}>
           <Switch>
-            <Route path='/home' render={() => <HomeComponent/>}/>
+            <Route path='/home' render={() => <Home />}/>
             <Redirect path='/' to='/home'/>
           </Switch>
           <AboutSidebarComponent/>

@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
-export default class ArticleComponent extends Component {
-  render() {
-    return <div>
-      <h3>{ this.props.title }</h3>
-      <img src={this.props.img} alt=""/>
-      <p>{ this.props.text }</p>
-    </div>
-  }
-}
+const ArticleComponent = ({ title, img, text  }) => (
+    <Fragment>
+        <h3>{ title }</h3>
+        <img src={ img } alt=""/>
+        <p>{ text }</p>
+    </Fragment>
+);
+export default ArticleComponent;
