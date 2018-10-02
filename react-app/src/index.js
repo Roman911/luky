@@ -4,11 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import moment from 'moment';
 
 import './index.css';
 import reducer from './reducers'
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+moment.locale('uk');
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
