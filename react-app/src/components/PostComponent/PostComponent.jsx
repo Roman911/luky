@@ -1,32 +1,54 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import DateTime from "../DateTime/DateTime";
 
- class PostComponent extends Component {
-   state = {
-     post: null
-   };
+import {css} from 'aphrodite/no-important';
+import styles from './PostStyle'
 
-   componentWillMount() {
-     axios.get('./post/01.json').then(({data}) => {
-       this.setState({post: data})
-     })
-   }
+class PostComponent extends Component {
+  state = {
+    post: null
+  };
+
+  componentWillMount() {
+    axios.get(`./post/${this.props.id}.json`).then(({data}) => {
+      this.setState({post: data})
+    });
+    const { setArticles } = this.props;
+    axios.get('./json/article.json').then(({data}) => {
+      setArticles(data)
+    })
+  }
 
   render() {
-     const post = this.state.post;
-     console.log(this.state);
-     const pos = !post ? 'lod' : post.map((item, index) => {
-       return <div key={index}>
-         <h3>{item.title}</h3>
-         <p>{item.text}</p>
-         <img src={item.img} alt=""/>
-       </div>
-     });
-    return (
-      <div >
-        { pos }
+    const { articles } = this.props;
+    const post = this.state.post;
+    const pos = !post ? 'lod' : post.map((item, index) => {
+      return <div key={index}>
+        { typeof item.text !== "object" ? <p className={css(styles.text)}>{ item.text }</p> : item.text.map((item, index) => {
+          return <p className={css(styles.text)} key={index}>{ item }</p>
+        })
+        }
+        <div className={css(styles.blockImg)}>
+          { typeof item.img === "string" ? <img className={css(styles.imgContent)} src={ item.img } alt=""/> : item.img.map((item, index) => {
+            return <img key={index} className={css(styles.img2)} src={ item } alt=""/>
+          })
+          }
+        </div>
       </div>
-    )
+    });
+
+    return <div className={css(styles.wrapper)}>
+      <div className={css(styles.top)}>
+        <h3 className={css(styles.title)}>{ articles && articles[0].title }</h3>
+        <div className={css(styles.date)}>
+          <DateTime value={  articles && articles[0].date } format='DD MMMM YYYY'/>
+        </div>
+      </div>
+      <img className={css(styles.img)} src={ articles && articles[0].img } alt=""/>
+      <p className={css(styles.text)}>{ articles && articles[0].text }</p>
+      {pos}
+    </div>
   }
 }
 

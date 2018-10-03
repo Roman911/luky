@@ -7,19 +7,24 @@ import styles from './HomeStyle'
 
 export default class HomeComponent extends Component {
   componentWillMount() {
-    const {setArticles} = this.props;
+    const { setArticles } = this.props;
     axios.get('./json/article.json').then(({data}) => {
       setArticles(data)
     })
   }
 
+  handleClick(id) {
+    const { setId } = this.props;
+    setId( id );
+  }
+
   render() {
-    const {articles} = this.props;
-    console.log(this.props);
+    const { articles } = this.props;
     const article = !articles ? 'Loading...' : articles.map((item, index) => {
       return <Fragment key={index}>
         <ArticleComponent
-          {...item}
+          { ...item }
+          handleClick = { this.handleClick.bind(this) }
         />
       </Fragment>
     });

@@ -4,7 +4,7 @@ import { $darkGray } from "../../style/variabelsColor";
 
 export default StyleSheet.create({
   wrapper: {
-    width:250,
+    width:350,
     padding: '0 20px'
   },
   img: {

@@ -4,14 +4,14 @@ import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import NavBarComponent from "./components/NavBarComponent/NavBarComponent";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Home  from "./containers/Home";
-import PostComponent from "./components/PostComponent/PostComponent";
+import Post from "./containers/Post";
 import AboutSidebarComponent from "./components/AboutSidebarComponent/AboutSidebarComponent";
 
 import { css } from 'aphrodite/no-important';
 import baseStyle from './style/baseStyle'
 import AppStyle from './style/AppStyle'
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return <Router>
       <div >
@@ -19,7 +19,7 @@ export default class App extends Component {
         <div className={css(baseStyle.wrapper, AppStyle.wrapper)}>
           <Switch>
             <Route path='/home' render={() => <Home />}/>
-            <Route path='/post' render={() => <PostComponent/>}/>
+            <Route path='/post' render={() => <Post />}/>
             <Redirect path='/' to='/home'/>
           </Switch>
           <AboutSidebarComponent/>
@@ -29,3 +29,5 @@ export default class App extends Component {
     </Router>;
   }
 }
+
+export default App
