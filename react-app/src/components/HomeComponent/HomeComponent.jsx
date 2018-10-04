@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import ArticleComponent from "./ArticleComponent";
 import axios from "axios";
 
-import {css} from 'aphrodite/no-important';
+import { css } from 'aphrodite/no-important';
 import styles from './HomeStyle'
 
 export default class HomeComponent extends Component {

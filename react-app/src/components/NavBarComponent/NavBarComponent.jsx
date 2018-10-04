@@ -1,34 +1,25 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { navBarItems } from './navBarConfig';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import {navBarItems} from './navBarConfig';
+import logo from '../../img/logo.jpg';
 
-import { css } from 'aphrodite/no-important';
+import {css} from 'aphrodite/no-important';
 import baseStyle from './../../style/baseStyle'
 import styles from './NavBarStyle'
 
-export default class NavBarComponent extends Component {
-
-  render() {
-
-    const links = navBarItems.map((item, index) => {
-      return <NavLink
-        key={index}
-        className={css(styles.link)}
-        to={item.route}><i className={item.class}
-      />
-        <p >
-          {item.title}
-        </p>
-      </NavLink>;
-    });
-
-    return <div className={css(styles.navBar)}>
-      <div className={css(styles.img)}>
-        <img src="./img/logo.jpg" alt=""/>
-      </div>
-      <div className={css(baseStyle.wrapperM, styles.navBarWrapper)}>
-        {links}
-      </div>
+const NavBarComponent = () => (
+  <div className={css(styles.navBar)}>
+    <div className={css(styles.img)}>
+      <img src={logo} alt=""/>
     </div>
-  }
-}
+    <div className={css(baseStyle.wrapperM, styles.navBarWrapper)}>
+      {navBarItems.map((item, index) =>
+      <NavLink key={index} className={css(styles.link)} to={item.route}>
+        { item.title }
+      </NavLink>
+    )}
+    </div>
+  </div>
+);
+
+export default NavBarComponent

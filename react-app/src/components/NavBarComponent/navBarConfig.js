@@ -14,9 +14,5 @@ export const navBarItems = [
   {
     title: 'про мене',
     route: '/about'
-  },
-  {
-    title: 'контакти',
-    route: '/contacts'
   }
 ];

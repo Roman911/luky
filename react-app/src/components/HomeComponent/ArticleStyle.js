@@ -31,7 +31,7 @@ export default StyleSheet.create({
   date: {
     fontSize: 12,
     color: $darkGray,
-    fontWeight: '600'
+    fontWeight: 'bold'
   },
   content: {
     display: 'flex',
