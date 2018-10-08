@@ -30,7 +30,7 @@ const ArticleComponent = ({ title, img, text, tag, date, id, handleClick }) => (
         </div>
       </div>
       <div className={css(styles.btnContent)}>
-        <NavLink to='/post'>
+        <NavLink to={`/post/${ id }`}>
           <button onClick={handleClick.bind(this, id)} className={css(styles.btn)}>
             Continue reading
           </button>

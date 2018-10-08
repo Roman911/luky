@@ -1,9 +1,9 @@
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as articlesActions from '../actions/articles';
 import Home from '../components/HomeComponent/HomeComponent';
 
-const mapStateToProps = ({articles}) => ({
+const mapStateToProps = ({ articles }) => ({
   articles: articles.items,
   id: articles.idItems
 });
@@ -14,5 +14,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Home);

@@ -11,12 +11,9 @@ class PostComponent extends Component {
   };
 
   componentWillMount() {
-    axios.get(`./post/${this.props.id}.json`).then(({data}) => {
+    const post = this.props.post;
+    axios.get(`./${post}.json`).then(({data}) => {
       this.setState({post: data})
-    });
-    const { setArticles } = this.props;
-    axios.get('./json/article.json').then(({data}) => {
-      setArticles(data)
     })
   }
 

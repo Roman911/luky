@@ -1,6 +1,6 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {navBarItems} from './navBarConfig';
+import { NavLink } from 'react-router-dom';
+import { navBarItems } from './navBarConfig';
 import logo from '../../img/logo.jpg';
 
 import {css} from 'aphrodite/no-important';
