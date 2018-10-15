@@ -17,6 +17,16 @@ export default (state = initialState, action) => {
         ...state,
         idItems: action.payload,
       };
+    case 'SET_ARTICLES_SPEEDWAY':
+      return {
+        ...state,
+        items: action.payload.filter(o => o.category === "speedway")
+      };
+    case 'SET_ARTICLES_TRAVEL':
+      return {
+        ...state,
+        items: action.payload.filter(o => o.category === "travel")
+      };
     default:
       return state;
   }

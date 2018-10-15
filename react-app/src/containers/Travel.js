@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as articlesActions from '../actions/articles';
-import Speedway from '../components/SpeedwayComponent/SpeedwayComponent';
+import Travel from '../components/TravelComponent/TravelComponent';
 
 const mapStateToProps = ({ articles }, ownProps ) => ({
   articles: articles.items,
@@ -16,5 +16,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Speedway);
+)(Travel);
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import avatar from '../../img/avatar.jpg'
+import { NavLink } from 'react-router-dom';
+import avatar from '../../img/avatar.jpg';
 
 import { css } from 'aphrodite/no-important';
-import styles from './AboutSidebarStyle'
+import styles from './AboutSidebarStyle';
+import btn from '../../style/buttons'
 
 export default class AboutSidebarComponent extends Component {
   render() {
@@ -18,7 +20,9 @@ export default class AboutSidebarComponent extends Component {
         </p>
       </div>
       <div>
-        <button>READ MORE</button>
+        <NavLink to='/about' className={css(btn.btn)}>
+          READ MORE
+        </NavLink>
       </div>
       <h3>Latest Instagram</h3>
       <div>

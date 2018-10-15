@@ -1,4 +1,5 @@
 import { StyleSheet } from 'aphrodite/no-important';
+
 import {$darkGray} from "../../style/variabelsColor";
 
 export default StyleSheet.create({
@@ -44,4 +45,10 @@ export default StyleSheet.create({
     color: $darkGray,
     fontWeight: '600'
   },
+  footer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '20px 0'
+  }
 })

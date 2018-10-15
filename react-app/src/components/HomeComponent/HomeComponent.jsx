@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react';
-import ArticleComponent from "./ArticleComponent";
+import ArticleComponent from "../ArticleComponent/ArticleComponent";
 import axios from "axios";
 
 import { css } from 'aphrodite/no-important';
 import styles from './HomeStyle'
 
-export default class HomeComponent extends Component {
+class HomeComponent extends Component {
   componentWillMount() {
     const { setArticles } = this.props;
     axios.get('./json/article.json').then(({data}) => {
@@ -33,3 +33,5 @@ export default class HomeComponent extends Component {
     </div>
   }
 }
+
+export default HomeComponent

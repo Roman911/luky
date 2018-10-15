@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $lightGray, $Blue} from "../../style/variabelsColor";
+import { $lightGray, $Blue } from "../../style/variabelsColor";
 
 export default StyleSheet.create({
   navBar: {
@@ -12,17 +12,28 @@ export default StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between'
   },
-  img: {
+  logo: {
     textAlign: 'center',
-    borderBottom: `1px solid ${$lightGray}`
+    borderBottom: `1px solid ${$lightGray}`,
+    padding: 20
+  },
+  img: {
+    maxWidth: 100
   },
   link: {
     color: '#333',
     borderTop: '2px solid transparent',
     padding: '0 20px',
+    height: 58,
+    display: 'flex',
+    alignItems: 'center',
     ':hover': {
       borderColor: $Blue,
       transition: '300ms'
     }
+  },
+  links: {
+    display: 'flex',
+    alignItems: 'center'
   }
 })

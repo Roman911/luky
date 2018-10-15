@@ -15,7 +15,8 @@ import registerServiceWorker from './registerServiceWorker';
 import NavBarComponent from "./components/NavBarComponent/NavBarComponent";
 import Home from "./containers/Home";
 import AboutSidebarComponent from "./components/AboutSidebarComponent/AboutSidebarComponent";
-import SpeedwayComponent from "./components/SpeedwayComponent/SpeedwayComponent";
+import Speedway from "./containers/Speedway";
+import Travel from "./containers/Travel";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import AboutComponent from "./components/AboutComponent/AboutComponent";
 import Post from "./containers/Post";
@@ -42,10 +43,10 @@ ReactDOM.render(
         <div className={css(baseStyle.wrapper, AppStyle.wrapper)}>
           <Fragment>
             <Route path='/home' render={() => <Home />} />
-            <Route path='/speedway' render={() => <SpeedwayComponent />}/>
+            <Route path='/speedway' render={() => <Speedway />}/>
+            <Route path='/travel' render={() => <Travel />}/>
             <Route path='/about' render={() => <AboutComponent />}/>
             <Route path='/post/:id' component={ post }/>
-
           </Fragment>
           <AboutSidebarComponent/>
         </div>
@@ -53,6 +54,5 @@ ReactDOM.render(
       </Fragment>
     </ConnectedRouter>
   </Provider>,
-
   document.getElementById('root'));
 registerServiceWorker();

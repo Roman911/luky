@@ -4,18 +4,19 @@ import HeaderComponent from "../HeaderComponent/HeaderComponent";
 import axios from "axios";
 
 import { css } from 'aphrodite/no-important';
-import styles from './SpeedwayStyle'
+import styles from './TravelStyle'
 
 class SpeedwayComponent extends Component {
   state = {
     data: null
   };
+
   componentWillMount() {
-    const { setArticlesSpeedway } = this.props;
+    const { setArticlesTravel } = this.props;
     axios.get('./json/article.json').then(({data}) => {
-      setArticlesSpeedway(data)
+      setArticlesTravel(data)
     });
-    axios.get('./json/speedwayHeader.json').then(({data}) => {
+    axios.get('./json/travelHeader.json').then(({data}) => {
       this.setState({ data: data })
     })
   }
@@ -27,6 +28,9 @@ class SpeedwayComponent extends Component {
 
   render() {
     const { articles } = this.props;
+    const header = !this.state.data ? 'Loading...' : this.state.data.map((item, index) => {
+      return <HeaderComponent key={index} title={item.title} tag={item.tag} img={item.img}/>
+    });
     const article = !articles ? 'Loading...' : articles.map((item, index) => {
       return <Fragment key={index}>
         <ArticleComponent
@@ -34,9 +38,6 @@ class SpeedwayComponent extends Component {
           handleClick = { this.handleClick.bind(this) }
         />
       </Fragment>
-    });
-    const header = !this.state.data ? 'Loading...' : this.state.data.map((item, index) => {
-      return <HeaderComponent key={index} title={item.title} tag={item.tag} img={item.img}/>
     });
     return <div className={css(styles.wrapper)}>
       { header }

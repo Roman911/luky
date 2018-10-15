@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkWhite, $lightGray, $darkGray } from "../../style/variabelsColor";
+import { $lightGray, $darkGray } from "../../style/variabelsColor";
 
 export default StyleSheet.create({
   wrapper: {
@@ -39,26 +39,9 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     padding: '10px 0'
   },
-  tag: {
-    backgroundColor: $darkWhite,
-    padding: '5px 10px',
-    marginRight: 10,
-    fontSize: 13
-  },
   btnContent: {
     display: 'flex',
     justifyContent: 'center'
-  },
-  btn: {
-    border: `2px solid ${$darkGray}`,
-    padding: '7px 20px',
-    background: 'transparent',
-    transition: '300ms',
-    cursor: 'pointer',
-    ':hover': {
-      background: $darkGray,
-      color: $darkWhite
-    }
   },
   link: {
     color: $darkGray

@@ -1,6 +1,11 @@
 @font-face {
   font-family: OpenSans;
-  src: url("./fonts/OpenSans-Regular.ttf");
+  src: url("./fonts/OpenSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: SourceSans;
+  src: url("./fonts/SourceSansPro/SourceSansPro-ExtraLight.ttf");
 }
 
 body {
