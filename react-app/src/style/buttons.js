@@ -13,6 +13,9 @@ export default StyleSheet.create({
       color: $darkWhite
     }
   },
+  tagContent: {
+    margin: '20px 0'
+  },
   tag: {
     backgroundColor: $white,
     padding: '6px 12px',
@@ -45,5 +48,50 @@ export default StyleSheet.create({
   iconF: {
     padding: '9px 19px',
     fontSize: 22
+  },
+  control: {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    height: '100%',
+    background: 'none',
+    border: 'none',
+    fontSize: 40,
+    color: 'rgba(255, 255, 255, 0.5)',
+    padding: '0 20px',
+    cursor: 'pointer',
+    ':hover': {
+      color: 'rgba(255, 255, 255, 0.8)'
+    },
+    ':focus': {
+      outline: 'none'
+    }
+  },
+  controlLeft: {
+    left: 0,
+    width: '20%',
+    textAlign: 'start'
+  },
+  controlRight: {
+    right: 0,
+    width: '70%',
+    textAlign: 'end'
+  },
+  close: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    background: 'none',
+    border: 'none',
+    padding: '20px 40px',
+    fontSize: 36,
+    cursor: 'pointer',
+    color: 'rgba(255, 255, 255, 0.5)',
+    ':hover': {
+      color: 'rgba(255, 255, 255, 0.8)'
+    },
+    ':focus': {
+      outline: 'none'
+    }
   }
 })

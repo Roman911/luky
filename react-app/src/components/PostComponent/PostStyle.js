@@ -19,26 +19,29 @@ export default StyleSheet.create({
     width: '100%',
     maxWidth: 500,
     float: 'left',
-    marginRight: 20
+    marginRight: 20,
+    cursor: 'pointer'
+  },
+  img2: {
+    maxWidth: '50%',
+    padding: 7,
+    cursor: 'pointer',
+    boxSizing: 'border-box'
+  },
+  imgContent: {
+    width: '100%',
+    marginRight: 20,
+    cursor: 'pointer'
   },
   text: {
     fontSize: 18,
     lineHeight: 1.6,
     textAlign: 'justify'
   },
-  imgContent: {
-    width: '100%',
-    marginRight: 20
-  },
   blockImg: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
-  },
-  img2: {
-    maxWidth: '50%',
-    boxSizing: 'border-box',
-    padding: 7
   },
   date: {
     fontSize: 12,

@@ -19,7 +19,7 @@ const ArticleComponent = ({ title, img, text, tag, date, id, handleClick }) => (
     <img className={css(styles.img)} src={img} alt=""/>
     <p className={css(styles.text)}>{text}</p>
     <div className={css(styles.content)}>
-      <div>
+      <div className={css(btn.tagContent)}>
         {tag.map((item, index) => {
           return <span className={css(btn.tag)} key={index}>
               {item}
